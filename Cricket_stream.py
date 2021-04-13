@@ -17,14 +17,15 @@ def predict(model, input_df):
 def run():
     from PIL import Image
     image = Image.open('indian_team-2.jpg')
-    image_office = Image.open('indian_team-1.jpg')
+    image_sidebar = Image.open('indian_team-1.jpg')
     st.image(image,use_column_width=True)
+    st.image(image_sidebar,use_column_width=True)
     add_selectbox = st.sidebar.selectbox(
     "How would you like to predict?",
     ("Online", "Batch"))
     st.sidebar.info('This app was created to predict the chances of the Indian team to win')
     st.sidebar.success('http://www.howstat.com/cricket/Statistics/Matches/MatchListCountry_ODI.asp?A=IND')
-    st.sidebar.image(image_office)
+    st.sidebar.image(image_sidebar)
     st.title("Predicting Oneday odi match Result")
     if add_selectbox == 'Online':
         date = st.date_input('Match Date', datetime.date(2021,1,1))
