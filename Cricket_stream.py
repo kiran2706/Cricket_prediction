@@ -5,7 +5,7 @@ import datetime
 model = load_model('Scrap_cricket_model')
 
 st.markdown('<style>body{background-color: lightblue;}</style>',unsafe_allow_html=True)
-st.markdown('<style>h1{color: red;}</style>', unsafe_allow_html=True)
+st.markdown('<style>h1{color: Blue;}</style>', unsafe_allow_html=True)
 
 
 
