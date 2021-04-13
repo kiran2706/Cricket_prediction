@@ -69,11 +69,12 @@ def run():
         input_df = pd.DataFrame([input_dict])
         if st.button("Predict"):
             output = predict(model=model, input_df=input_df)
+            perc = (output[1]*8.0)/100
             if output[0]=='1.0':
               result = "win"
             if output[0]=='0.0':
               result = "lose"
-            st.success('India will {} the match'.format(result))
+            st.success('India will {} the match'.format(result),perc)
     if add_selectbox == 'Batch':
         file_upload = st.file_uploader("Upload csv file for predictions", type=["csv"])
         if file_upload is not None:
