@@ -74,7 +74,7 @@ def run():
               result = "win"
             if output[0]=='0.0':
               result = "lose"
-            st.success(('India will {} the match'.format(result),perc))
+            st.success('India will {} the match'.format(result)perc)
     if add_selectbox == 'Batch':
         file_upload = st.file_uploader("Upload csv file for predictions", type=["csv"])
         if file_upload is not None:
