@@ -25,7 +25,7 @@ def run():
     st.sidebar.info('This app was created to predict the chances of the Indian team to win')
     st.sidebar.success('http://www.howstat.com/cricket/Statistics/Matches/MatchListCountry_ODI.asp?A=IND')
     st.sidebar.image(image_sidebar,use_column_width=True)
-    st.title("Predicting Oneday odi match Result")
+    st.title("Predicting ODI match Result")
     if add_selectbox == 'Online':
         date = st.date_input('Match Date', datetime.date(2021,1,1))
         Versus = st.selectbox('Versus', ['England', 'New Zealand', 'Pakistan', 'West Indies',
