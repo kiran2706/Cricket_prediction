@@ -72,9 +72,10 @@ def run():
             perc = (output[1]*8.0)*10
             if output[0]=='1.0':
               result = "win"
+              st.success('India will {} the match having a win percentage of {}'.format(result,perc))
             if output[0]=='0.0':
               result = "lose"
-            st.success('India will {} the match having a win percentage of {}'.format(result,perc))
+              st.success('India will {} the match'.format(result,perc))
     if add_selectbox == 'Batch':
         file_upload = st.file_uploader("Upload csv file for predictions", type=["csv"])
         if file_upload is not None:
