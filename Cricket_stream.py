@@ -4,7 +4,7 @@ import pandas as pd
 import datetime
 model = load_model('Scrap_cricket_model')
 
-st.markdown('<style>body{background-color: cream;}</style>',unsafe_allow_html=True)
+st.markdown('<style>body{background-color: lightblue;}</style>',unsafe_allow_html=True)
 
 
 
