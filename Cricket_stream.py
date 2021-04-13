@@ -23,7 +23,7 @@ def run():
     add_selectbox = st.sidebar.selectbox(
     "How would you like to predict?",
     ("Online", "Batch"))
-    st.sidebar.info('This app was created to predict the chances of the Indian team to win')
+    st.sidebar.info('This app was created to predict the chances of the Indian team to win with an accuracy of 80%')
     st.sidebar.success('http://www.howstat.com/cricket/Statistics/Matches/MatchListCountry_ODI.asp?A=IND')
     st.sidebar.image(image_sidebar,use_column_width=True)
     st.title("Predicting ODI match Result")
@@ -72,7 +72,7 @@ def run():
             perc = (output[1]*8.0)*10
             if output[0]=='1.0':
               result = "win"
-              st.success('India will {} the match having a win percentage of {}'.format(result,perc))
+              st.success('India will {} the match with {} success rate'.format(result,perc))
             if output[0]=='0.0':
               result = "lose"
               st.success('India will {} the match'.format(result,perc))
