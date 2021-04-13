@@ -19,7 +19,7 @@ def run():
     image = Image.open('indian_team-2.jpg')
     image_sidebar = Image.open('indian_team-1.jpg')
     st.image(image,use_column_width=True)
-    st.image(image_sidebar,use_column_width=True)
+    st.image(image_sidebar)
     add_selectbox = st.sidebar.selectbox(
     "How would you like to predict?",
     ("Online", "Batch"))
