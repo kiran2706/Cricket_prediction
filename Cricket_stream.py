@@ -69,7 +69,7 @@ def run():
         input_df = pd.DataFrame([input_dict])
         if st.button("Predict"):
             output = predict(model=model, input_df=input_df)
-            perc = (output[1]*8.0)
+            perc = (output[1]*8.0)*10
             if output[0]=='1.0':
               result = "win"
             if output[0]=='0.0':
