@@ -16,7 +16,18 @@ st.markdown(
 """,unsafe_allow_html=True,
 )
 
-st.markdown('<style>body{background-color: lightblue;}</style>',unsafe_allow_html=True)
+st.markdown(
+    ''''
+    <style>body{
+    
+    background-image: linear-gradient(lightblue,orange);
+    color: white;
+    
+    }</style>''',unsafe_allow_html=True
+)
+
+
+
 st.markdown('<style>h1{color: Blue;}</style>', unsafe_allow_html=True)
 
 
