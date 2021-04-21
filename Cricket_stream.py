@@ -17,7 +17,7 @@ st.markdown(
 )
 
 st.markdown(
-    ''''
+    '''
     <style>body{
     
     background-image: linear-gradient(lightblue,orange);
