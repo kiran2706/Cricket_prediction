@@ -7,13 +7,12 @@ model = load_model('Scrap_cricket_model')
 st.markdown(
     """
 <style>
-.sidebar .sidebar-content {
-    background-image: linear-gradient(lightblue,lightblue);
-    color: lightblue;
+.sidebar .sidebar-content 
+{
+    background-color: lightblue;
 }
 </style>
-""",
-    unsafe_allow_html=True,
+""",unsafe_allow_html=True,
 )
 
 st.markdown('<style>body{background-color: lightblue;}</style>',unsafe_allow_html=True)
