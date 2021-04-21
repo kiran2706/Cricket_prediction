@@ -20,8 +20,7 @@ st.markdown(
     '''
     <style>body{
     
-    background-color: linear-gradient(lightblue,orange);
-    color: white;
+    background-color: lightblue;
     
     }</style>''',unsafe_allow_html=True
 )
