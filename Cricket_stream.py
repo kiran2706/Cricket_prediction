@@ -25,7 +25,8 @@ def run():
     ("Online", "Batch"))
     st.sidebar.info('This app was created to predict the chances of the Indian team to win or loose with an accuracy of 80%')
     st.sidebar.success('''Data was scraped from the following website - 
-    http://www.howstat.com/cricket/Statistics/Matches/MatchListCountry_ODI.asp?A=IND''')
+    http://www.howstat.com/cricket/Statistics/Matches
+    /MatchListCountry_ODI.asp?A=IND''')
     st.sidebar.image(image_sidebar,use_column_width=True)
     st.title("Predicting ODI match Result")
     if add_selectbox == 'Online':
