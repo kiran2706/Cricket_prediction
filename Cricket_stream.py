@@ -4,7 +4,30 @@ import pandas as pd
 import datetime
 model = load_model('Scrap_cricket_model')
 
-st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
+st.markdown(
+    """
+<style>
+.sidebar .sidebar-content 
+{
+    background-image: linear-gradient(lightblue,orange);
+    color: white;
+}
+</style>
+""",unsafe_allow_html=True,
+)
+
+st.markdown(
+    '''
+    <style>body{
+    
+    background-color: lightblue;
+    
+    }</style>''',unsafe_allow_html=True
+)
+
+
+
+st.markdown('<style>h1{color: Blue;}</style>', unsafe_allow_html=True)
 
 
 
@@ -17,15 +40,17 @@ def predict(model, input_df):
 def run():
     from PIL import Image
     image = Image.open('indian_team-2.jpg')
-    image_office = Image.open('indian_team-1.jpg')
+    image_sidebar = Image.open('indian_team-1.jpg')
     st.image(image,use_column_width=True)
     add_selectbox = st.sidebar.selectbox(
     "How would you like to predict?",
     ("Online", "Batch"))
-    st.sidebar.info('This app was created to predict the chances of the Indian team to win')
-    st.sidebar.success('http://www.howstat.com/cricket/Statistics/Matches/MatchListCountry_ODI.asp?A=IND')
-    st.sidebar.image(image_office)
-    st.title("Predicting Oneday odi match Result")
+    st.sidebar.info('This app was created to predict the chances of the Indian team to win or loose with an accuracy of 80%')
+    st.sidebar.success('''Data was scraped from the following website - 
+    http://www.howstat.com/cricket/Statistics/Matches
+    /MatchListCountry_ODI.asp?A=IND''')
+    st.sidebar.image(image_sidebar,use_column_width=True)
+    st.title("Predicting ODI match Result")
     if add_selectbox == 'Online':
         date = st.date_input('Match Date', datetime.date(2021,1,1))
         Versus = st.selectbox('Versus', ['England', 'New Zealand', 'Pakistan', 'West Indies',
@@ -68,11 +93,13 @@ def run():
         input_df = pd.DataFrame([input_dict])
         if st.button("Predict"):
             output = predict(model=model, input_df=input_df)
+            perc = int((output[1]*8.0)*10)
             if output[0]=='1.0':
               result = "win"
+              st.success('India will {} the match with {}% success rate'.format(result,perc))
             if output[0]=='0.0':
               result = "lose"
-            st.success('India will {} the match'.format(result))
+              st.success('India will {} the match'.format(result,perc))
     if add_selectbox == 'Batch':
         file_upload = st.file_uploader("Upload csv file for predictions", type=["csv"])
         if file_upload is not None:
